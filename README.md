@@ -2,10 +2,10 @@
 
 My fork of the Twitter API Client for node known as **twit**.
 
-Get the orginal **twit** here: <https://github.com/ttezel/twit>
+Get the original **twit** here: <https://github.com/ttezel/twit>
 
 ##Usage:
-Tracks the tech community on Twitter and either follows a user tweeting about tech (75% of the time), retweets a recent tweet about tech (15% of the time), or unfollows a user who hasn't followed you back (10% of the time).
+Tracks the tech community on Twitter and either follows a user tweeting about tech (75% of the time), retweets a recent tweet about tech (15% of the time), or unfollows a user who hasn't followed me back (10% of the time).
 
 ##Make your own
 Add a file called: `config1.js` at the root of the `twit` folder. It should look something like this (insert your API keys between the ' '):
