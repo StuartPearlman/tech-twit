@@ -83,9 +83,3 @@ function handleError(err) {
     // console.error("data:", err.data);
     console.log(timestring());
 };
-
-//clear console twice an hour
-var sys = require('sys')
-var exec = require('child_process').exec;
-function puts(error, stdout, stderr) {sys.puts(stdout)}
-setInterval(exec("cls", puts), 1800000);
