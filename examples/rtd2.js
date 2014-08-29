@@ -2,7 +2,7 @@
 // Makes new friends and prunes its followings.
 //
 var Bot = require("./bot"),
-    config1 = require("../config1");
+config1 = require("../config1");
 
 var bot = new Bot(config1);
 
@@ -35,7 +35,6 @@ function techTwit() {
         var rand = Math.random();
 
         if (rand <= 0) { // do a targeted follow
-            console.log("FOLLOW");
             var params = {
                 q: "tech",
                 since: datestring(),
@@ -52,7 +51,6 @@ function techTwit() {
             });
 
         } else if (rand <= .20) { // retweet
-            console.log("RETWEET");
             var params = {
                 q: "tech",
                 since: datestring(),
@@ -67,7 +65,6 @@ function techTwit() {
                 console.log(timestring());
             });
         } else { //  prune a friend
-            console.log("PRUNE");
             bot.prune(function(err, reply) {
                 if (err) return handleError(err);
 
