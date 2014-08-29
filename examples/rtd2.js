@@ -2,7 +2,7 @@
 // Makes new friends and prunes its followings.
 //
 var Bot = require("./bot"),
-config1 = require("../config1");
+var config1 = require("../config1");
 
 var bot = new Bot(config1);
 
@@ -50,7 +50,7 @@ function techTwit() {
                 console.log(timestring());
             });
 
-        } else if (rand <= .20) { // retweet
+        } else if (rand <= .25) { // retweet
             var params = {
                 q: "tech",
                 since: datestring(),
@@ -73,7 +73,7 @@ function techTwit() {
                 console.log(timestring());
             });
         }
-    }, 210000);
+    }, 240000);
 };
 
 techTwit();
@@ -82,6 +82,10 @@ function handleError(err) {
     console.error("response status:", err.statusCode);
     // console.error("data:", err.data);
     console.log(timestring());
-    clearInterval(techTwit());
-    setTimeout(techTwit(), 210000); //  wait one interval to prevent API banning
 };
+
+//clear console twice an hour
+var sys = require('sys')
+var exec = require('child_process').exec;
+function puts(error, stdout, stderr) {sys.puts(stdout)}
+setInterval(exec("cls", puts), 1800000);
